@@ -1,0 +1,297 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hiphop newver dieeeee!!!</title>
+    <link rel="icon" type="image/x-icon"
+        href="https://cdn.glitch.global/888d268c-ad04-4a13-99a1-82ff5759bd15/favicon.png?v=1646109772563">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: sans-serif;
+            background-color: #111;
+            height: 100vh;
+            width: 100vw;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+            user-select: none;
+            color: #fff;
+        }
+
+        h1 {
+            margin-bottom: 50px;
+        }
+
+        #hiphop__wrapper {
+            display: grid;
+            grid-template-columns: 1fr;
+            grid-gap: 10px;
+            /* grid-column-gap: 20px; */
+        }
+
+        .hiphop {
+            color: #fff;
+            font-size: 7rem;
+            text-align: center;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            animation: hue 1s infinite;
+            border-radius: 10px;
+            padding: 0 20px;
+        }
+
+        .hiphop img {
+            height: 500px;
+            width: auto;
+            object-fit: cover;
+        }
+
+        @keyframes hue {
+            0% {
+                filter: hue-rotate(0deg);
+            }
+
+            100% {
+                filter: hue-rotate(360deg);
+            }
+        }
+
+        #inputWrapper {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-top: 50px;
+        }
+
+        #speed,
+        #size,
+        #volume,
+        #type {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+            margin: 0 10px;
+        }
+
+
+        #inputWrapper label {
+            font-size: 1.5rem;
+            margin-bottom: 10px;
+            font-weight: 700;
+        }
+
+        #muteBtn {
+            position: absolute;
+            top: 10px;
+            left: 10px;
+            width: 50px;
+            height: 50px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 2rem;
+            cursor: pointer;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Hiphop never dieeee!!!</h1>
+    <div id="hiphop__wrapper">
+        <span class="hiphop">
+            <!-- <img src="khabanh.gif" alt="" srcset=""> -->
+        </span>
+    </div>
+    <div id="inputWrapper">
+        <div id="speed">
+            <label for="speed">Speed: 5</label>
+            <input type="range" name="speed" id="speedInput" min="1" max="10" step=".1" value="5">
+        </div>
+        <div id="size">
+            <label for="size">Size: 1x1</label>
+            <input type="range" name="size" id="sizeInput" min="1" max="10" step="1" value="1">
+        </div>
+        <div id="volume">
+            <label for="volume">Volume: 50%</label>
+            <input type="range" name="volume" id="volumeInput" min="1" max="100" step="1" value="50">
+        </div>
+        <div id="type">
+            <label for="obj">Type</label>
+            <select name="obj" id="typeInput">
+                <option value="text">Text</option>
+                <option value="khabanh">Kha BanH</option>
+            </select>
+        </div>
+    </div>
+    <!-- <audio id="audio" loop>
+        <source src="./vinahome.mp3" type="audio/mpeg">
+    </audio> -->
+    <div id="muteBtn">🔇</div>
+    <script src="./rythm.js"></script>
+    <script>
+        var rythm = new Rythm()
+        rythm.setMusic('https://cdn.glitch.global/888d268c-ad04-4a13-99a1-82ff5759bd15/vinahome.mp3?v=1646104087564')
+        rythm.addRythm('hiphop', 'pulse', 0, 10, {
+            min: 0.1,
+            max: 1.2
+        })
+        // rythm.addRythm('hiphop', 'twist', 0, 10, {
+        //     min: 20,
+        //     max: 180
+        // })
+        rythm.addRythm('hiphop', 'color', 0, 10, {
+            from: [0, 0, 255],
+            to: [255, 0, 255]
+        })
+        rythm.addRythm('hiphop', 'neon', 0, 10, {
+            from: [0, 0, 255],
+            to: [255, 0, 255]
+        })
+
+        let hiphopWrapper = document.querySelector('#hiphop__wrapper');
+        let hiphopEle = document.querySelectorAll('.hiphop');
+        let speedInput = document.getElementById('speedInput');
+        let speedLabel = document.querySelector('#speed label');
+        let sizeInput = document.getElementById('sizeInput');
+        let sizeLabel = document.querySelector('#size label');
+        let volumeInput = document.getElementById('volumeInput');
+        let volumeLabel = document.querySelector('#volume label');
+        let typeInput = document.getElementById('typeInput');
+        let typeLabel = document.querySelector('#type label');
+        let hiphopTxt = "ጿ ኈ ቼ ዽ ጿ ኈ ቼ ዽ ጿ ኈ ቼ ዽ ጿ ኈ ቼ ዽ ጿ ኈ ቼ ዽ ጿ ኈ ቼ ዽ ጿ ኈ ቼ ዽ ጿ ኈ ቼ ዽ ጿ ኈ ቼ ዽ ጿ ኈ ቼ ዽ ጿ ጿ ኈ ቼ ዽ ጿ ኈ ቼ ዽ ጿ ኈ ቼ ዽ ጿ ኈ ቼ ዽ ጿ ኈ ቼ ዽ ጿ ኈ ቼ ዽ ጿ ኈ ቼ ዽ ጿ ኈ ቼ ዽ ጿ ኈ ቼ ዽ ጿ ኈ ቼ ዽ ጿ ጿ ኈ ቼ ዽ ጿ ኈ ቼ ዽ ጿ ኈ ቼ ዽ ጿ ኈ ቼ ዽ ጿ ኈ ቼ ዽ ጿ ኈ ቼ ዽ ጿ ኈ ቼ ዽ ጿ ኈ ቼ ዽ ጿ ኈ ቼ ዽ ጿ ኈ ቼ ዽ ጿ ጿ ኈ ቼ ዽ ጿ ኈ ቼ ዽ ጿ ኈ ቼ ዽ ጿ ኈ ቼ ዽ ጿ ኈ ቼ ዽ ጿ ኈ ቼ ዽ ጿ ኈ ቼ ዽ ጿ ኈ ቼ ዽ ጿ ኈ ቼ ዽ ጿ ኈ ቼ ዽ ጿ ጿ ኈ ቼ ዽ ጿ ኈ ቼ ዽ ጿ ኈ ቼ ዽ ጿ ኈ ቼ ዽ ጿ ኈ ቼ ዽ ጿ ኈ ቼ ዽ ጿ ኈ ቼ ዽ ጿ ኈ ቼ ዽ ጿ ኈ ቼ ዽ ጿ ኈ ቼ ዽ ጿ ጿ ኈ ቼ ዽ ጿ ኈ ቼ ዽ ጿ ኈ ቼ ዽ ጿ ኈ ቼ ዽ ጿ ኈ ቼ ዽ ጿ ኈ ቼ ዽ ጿ ኈ ቼ ዽ ጿ ኈ ቼ ዽ ጿ ኈ ቼ ዽ ጿ ኈ ቼ ዽ ጿ ጿ ኈ ቼ ዽ ጿ ኈ ቼ ዽ ጿ ኈ ቼ ዽ ጿ ኈ ቼ ዽ ጿ ኈ ቼ ዽ ጿ ኈ ቼ ዽ ጿ ኈ ቼ ዽ ጿ ኈ ቼ ዽ ጿ ኈ ቼ ዽ ጿ ኈ ቼ ዽ ጿ ጿ ኈ ቼ ዽ ጿ ኈ ቼ ዽ ጿ ኈ ቼ ዽ ጿ ኈ ቼ ዽ ጿ ኈ ቼ ዽ ጿ ኈ ቼ ዽ ጿ ኈ ቼ ዽ ጿ ኈ ቼ ዽ ጿ ኈ ቼ ዽ ጿ ኈ ቼ ዽ ጿ ጿ ኈ ቼ ዽ ጿ ኈ ቼ ዽ ጿ ኈ ቼ ዽ ጿ ኈ ቼ ዽ ጿ ኈ ቼ ዽ ጿ ኈ ቼ ዽ ጿ ኈ ቼ ዽ ጿ ኈ ቼ ዽ ጿ ኈ ቼ ዽ ጿ ኈ ቼ ዽ ጿ ጿ ኈ ቼ ዽ ጿ ኈ ቼ ዽ ጿ ኈ ቼ ዽ ጿ ኈ ቼ ዽ ጿ ኈ ቼ ዽ ጿ ኈ ቼ ዽ ጿ ኈ ቼ ዽ ጿ ኈ ቼ ዽ ጿ ኈ ቼ ዽ ጿ ኈ ቼ ዽ ጿ"
+        let hiphopArr = hiphopTxt.split(" ");
+        let i = 0;
+        let arrLength = hiphopArr.length;
+        let hiphopAnimation;
+        let header = document.querySelector('h1');
+        let audio = document.getElementById('audio');
+        let muteBtn = document.getElementById('muteBtn');
+        let isMuted = true;
+        let speed;
+        let type = typeInput.value;
+        let gifSrc = "https://cdn.glitch.global/25be1195-fa5d-4a5c-82a5-8e4ee85cbc51/khabanh.gif?v=1646204361580"
+
+        typeInput.onchange = () => {
+            type = typeInput.value;
+            startAnimation()
+        }
+
+        sizeInput.oninput = () => {
+            hiphopWrapper.style.gridTemplateColumns = `repeat(${sizeInput.value}, 1fr)`;
+            hiphopWrapper.innerHTML = "";
+            let size = sizeInput.value * sizeInput.value;
+            for (let j = 0; j < size; j++) {
+                let ele = document.createElement('span');
+                ele.classList.add('hiphop');
+                if (type == "khabanh") {
+
+                    let img = document.createElement('img');
+                    img.src = gifSrc;
+                    ele.appendChild(img);
+                    img.style.height = `${500 / sizeInput.value}px`;
+                }
+                ele.style.fontSize = `${5 / sizeInput.value + 1.5}rem`;
+                hiphopWrapper.appendChild(ele);
+                if (type == "text") {
+
+                    startAnimation();
+                }
+            }
+            sizeLabel.innerText = `Size: ${sizeInput.value}x${sizeInput.value}`;
+        }
+        volumeInput.oninput = () => {
+            volumeLabel.innerText = `Volume: ${volumeInput.value}%`;
+            rythm.setGain(volumeInput.value / 100);
+        }
+        muteBtn.onclick = () => {
+            if (isMuted) {
+                // audio.play();
+                // audio.volume = currentVolume;
+                muteBtn.innerHTML = "🔊";
+                isMuted = false;
+                rythm.start();
+            } else {
+                // audio.pause();
+                // audio.volume = 0;
+                muteBtn.innerHTML = "🔇";
+                isMuted = true;
+                rythm.stop();
+            }
+        }
+        let currentVolume = 0.5;
+        rythm.setGain(currentVolume);
+        let startAnimation = () => {
+            hiphopEle = document.querySelectorAll('.hiphop');
+            switch (type) {
+                case "text":
+                    document.querySelector("#speed").style.display = "flex"
+                    if (hiphopAnimation) {
+                        clearInterval(hiphopAnimation);
+                    }
+                    hiphopAnimation = setInterval(() => {
+                        hiphopEle.forEach(ele => {
+                            ele.innerText = hiphopArr[i];
+                        });
+                        i++;
+                        if (i >= arrLength) {
+                            i = 0;
+                        }
+                    }, 500 / speed || 250)
+
+                    break;
+                case "khabanh": document.querySelector("#speed").style.display = "none"
+                    hiphopEle.forEach(ele => {
+                        ele.innerHTML = "";
+                        let img = document.createElement('img');
+                        img.src = gifSrc;
+                        let size = sizeInput.value;
+                        img.style.height = `${500 / sizeInput.value}px`;
+                        ele.appendChild(img);
+                    });
+                    clearInterval(hiphopAnimation);
+                    break;
+                default:
+                    break;
+            }
+        }
+        startAnimation();
+
+        speedInput.oninput = () => {
+            if (hiphopAnimation) {
+                clearInterval(hiphopAnimation);
+            }
+            speed = speedInput.value;
+            speedLabel.innerText = `Speed: ${speed}`;
+            currentVolume = speed / 10;
+            // isMuted ? audio.volume = 0 : audio.volume = currentVolume;
+            // isMuted ? rythm.setGain(0) : rythm.setGain(currentVolume);
+            header.innerText = `Hiphop never di${"e".repeat(Math.round(speed))}!!!`
+            let interval = 500 / speed;
+            hiphopAnimation = setInterval(() => {
+                hiphopEle.forEach(ele => {
+                    ele.innerText = hiphopArr[i];
+                });
+                i++;
+                if (i >= arrLength) {
+                    i = 0;
+                }
+            }, interval)
+        }
+    </script>
+</body>
+
+</html>
